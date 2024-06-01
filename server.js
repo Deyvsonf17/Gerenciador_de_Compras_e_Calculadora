@@ -113,7 +113,7 @@ app.delete('/compras-parceladas/:name/:product', async (req, res) => {
         res.send('Compra parcelada excluída com sucesso!');
         client.release();
     } catch (err) {
-        consol"e.error('Erro ao excluir compra parcelada', err);
+        console.error('Erro ao excluir compra parcelada', err);
         res.status(500).send('Erro ao excluir compra parcelada');
     }
 });
