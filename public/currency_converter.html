@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moeda</title>
+    <link rel="shortcut icon" href="img/icons8-dólar-americano-circulado-16.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+   
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> Gerenciador de Compras</a>
+                <ul class="sub-menu">
+                    <li><a href="parceladas.html"><i class="fas fa-credit-card"></i> Compras Parceladas</a></li>
+                    <li><a href="assinatura-mensal.html"><i class="fas fa-calendar-alt"></i> Assinatura Mensal</a></li>
+                </ul>
+            </li>
+            <li><a href="#calculadora"><i class="fas fa-calculator"></i> Calculadoras</a>
+                <ul class="sub-menu">
+                    <li><a href="percentage_increase.html"><i class="fas fa-arrow-up"></i> Aumento Percentual</a></li>
+                    <li><a href="percentage_decrease.html"><i class="fas fa-arrow-down"></i> Redução Percentual</a></li>
+                    <li><a href="percentage_of_value.html"><i class="fas fa-percent"></i> Porcentagem de um Valor</a></li>
+                    <li><a href="calculadora.html"><i class="fas fa-calculator"></i> Calculadora Normal</a></li>
+                    <li><a href="currency_converter.html"><i class="fas fa-exchange-alt"></i> Conversor de Moeda</a></li>
+                </ul>
+            </li>
+        </ul>
+        </nav>
+
+    <div class="container">
+        <h2>Conversor de Moeda</h2>
+        <input type="number" id="amount" placeholder="Valor">
+        <select id="from-currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="BRL">BRL</option>
+        </select>
+        <select id="to-currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="BRL">BRL</option>
+        </select>
+        <button onclick="convertCurrency()">Converter</button>
+        <div class="resul">
+        <p id="conversion-result">Resultado</p>
+    </div>
+    </div>
+    
+
+    <footer>
+    
+        <p>© 2024, todos os direitos reservados.</p>
+        <p>Desenvolvido por: Deyvson Felipe</p>
+        <p>Contatos:
+            <a href="mailto:deyvsonf016@gmail.com?subject=Assunto da mensagem&body=Corpo da mensagem" target="_blank"><i class="fas fa-envelope"></i> E-mail</a>
+            |
+            <a href="https://www.facebook.com/Deyvsonflima" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            |
+            <a href="https://www.instagram.com/deyvsonf.lima/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        </p>
+    
+</footer>
+
+
+    <script src="script4.js"></script>
+</body>
+</html>

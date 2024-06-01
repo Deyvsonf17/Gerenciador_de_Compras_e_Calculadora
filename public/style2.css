@@ -1,0 +1,32 @@
+
+footer {
+    display: flex;
+    justify-content: space-between; /* Alinha os elementos com espaço entre eles */
+    align-items: center; /* Centraliza verticalmente os elementos */
+    background-color: #0D0D0D;
+    color: #fff;
+    text-align: center;
+    padding: 1% 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 54%;
+}
+
+footer p {
+    margin: 0; /* Remover margens padrão dos parágrafos */
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+footer a {
+    color: #000080; /* Azul escuro */
+    text-decoration: none;
+    margin: 0 10px; /* Adicionar margem entre os links */
+}
+
+footer a:hover {
+    color: #ff0101; /* Azul escuro */
+    text-decoration:underline;
+    margin: 0 10px; /* Adicionar margem entre os links */
+}

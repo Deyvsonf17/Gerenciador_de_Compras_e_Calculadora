@@ -1,0 +1,315 @@
+/* Estilo geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f0f8ff; /* Fundo branco */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #000080; /* Azul escuro */
+}
+
+.container {
+    background: rgba(0, 0, 255, 0.1); /* Fundo azul claro transparente */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 139, 0.5); /* Sombra azul escuro */
+    text-align: center;
+    width: 350px;
+    margin: auto; /* Adicionando margens automáticas para centralizar */
+}
+
+.container2 {
+    background: rgba(0, 0, 255, 0.1); /* Fundo azul claro transparente */
+    padding: 10px; /* Reduzindo o padding para manter proporções */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 139, 0.5); /* Sombra azul escuro */
+    text-align: center;
+    width: 250px; /* Reduzindo a largura do contêiner */
+    margin: auto; /* Centralizando horizontalmente */
+}
+
+h1, h2 {
+    color: #000080; /* Azul escuro */
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000080; /* Azul escuro */
+    background: rgba(0, 0, 255, 0.2); /* Fundo azul claro transparente */
+    padding: 15px 25px;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.3s;
+    display: inline-block;
+    
+}
+
+nav ul li a:hover {
+    background: rgba(173, 216, 230, 0.7); /* Azul claro */
+    transform: scale(1.05);
+}
+
+input[type="number"], input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 200, 0.5); /* Fundo azul claro transparente */
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+    background: rgba(255, 255, 255, 1); /* Azul mais intenso */
+    transform: scale(1.05);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #0000ff; /* Azul */
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #000080; /* Azul escuro */
+    transform: scale(1.05);
+}
+
+p {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Estilo do menu */
+.navbar {
+    background-color: #f0f8ff; /* Fundo branco */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+.nav-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000080; /* Azul escuro */
+    padding: 15px 20px;
+    display: block;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(173, 216, 230, 0.2); /* Fundo azul claro transparente */
+    border-radius: 10px;
+}
+
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background-color: #f0f8ff; /* Fundo branco */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 60px;
+}
+
+.sub-menu li {
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sub-menu li a {
+    padding: 12px 20px;
+}
+
+.sub-menu li:last-child {
+    border-bottom: none;
+}
+
+/* Estilo do conteúdo */
+.container {
+    margin-top: 100px; /* Espaçamento para o menu */
+    padding: 20px;
+}
+
+
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px; /* Reduzindo o espaçamento entre os botões */
+    margin-top: 5px; /* Adicionando um espaço entre o display e os botões */
+}
+
+.calculator-buttons button {
+    padding: 10px;
+    font-size: 14px;
+    display: inline-block;
+    width: 64px;
+    height: 35px; /*Definindo uma altura fixa para os botões */
+}
+
+calc-display {
+    width: calc(115% - 25px);
+    padding: 5px;
+    font-size: 20px;
+    margin-bottom: 7px;
+    background: #f0f8ff;
+    color: #000080;
+    height: 34px;
+
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: #0000ff; /* Azul */
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* Reduzindo o raio do border-radius */
+    cursor: pointer;
+    margin: 5px 0; /* Reduzindo o espaçamento vertical dos botões */
+    transition: background 0.3s, transform 0.3s;
+    font-size: 14px; /* Reduzindo o tamanho da fonte dos botões */
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-between; /* Alinha os elementos com espaço entre eles */
+    align-items: center; /* Centraliza verticalmente os elementos */
+    background-color: #b4b4b462; /* Fundo branco */
+    color: #000080; /* Azul escuro */
+    text-align: center;
+    padding: 1% 55px; /* Espaçamento interno */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0; /* Remover margens padrão dos parágrafos */
+    margin-left: 20px; /* Margem esquerda para afastar o texto da borda esquerda */
+    margin-right: 20px; /* Margem direita para afastar o texto da borda direita */
+    font-weight: bold;
+}
+
+footer a {
+    color: #000080; /* Azul escuro */
+    text-decoration: none;
+    margin: 0 10px; /* Adicionar margem entre os links */
+}
+
+footer a:hover {
+    color: #ff0101; /* Azul escuro */
+    text-decoration:underline;
+    margin: 0 10px; /* Adicionar margem entre os links */
+}
+
+/* Para garantir que o conteúdo do footer não encoste na borda do site */
+.container {
+    padding-bottom: 60px; /* Ajuste conforme necessário para garantir que o conteúdo não sobreponha o footer */
+position: fixed;
+}
+
+.container3 {  
+    
+    position: fixed;
+    margin-top: 100px;
+    padding: 20px;
+    background: rgba(0, 0, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 139, 0.5);
+    text-align: center;
+    width: 234px;
+    height: 382px;
+    margin: auto;
+    margin-top: -52px;
+}
+
+
+nav ul.nav5 li a {
+    text-decoration: none;
+    color: #000080; /* Azul escuro */
+    background: rgba(0, 0, 255, 0.2); /* Fundo azul claro transparente */
+    padding: 1px 15px;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.3s;
+    display: inline-block;
+    height: 15px;
+}
+
+select#to-currency{
+    width: 55px;
+    height: 40px;
+    font-weight: bold;
+}
+
+select#from-currency{
+    width: 55px;
+    height: 40px;
+    font-weight: bold;
+
+    
+}
+
+
+.resul{
+    
+    text-align: center;
+    display: grid;
+    place-items: center; /* Centralizar horizontal e verticalmente */
+}

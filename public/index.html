@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="shortcut icon" href="img/icons8-pagina-inicial-16.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container3">
+        <h1>Menu</h1>
+        <p>Bem-vindo ao nosso site! Navegue pelas opções abaixo para acessar diversas funcionalidades.</p>
+        <input type="text" id="search" placeholder="Buscar...">
+        <nav>
+            <ul class="nav5">
+                <li><a href="parceladas.html"><i class="fas fa-credit-card"></i> Compras Parceladas</a></li>
+                <li><a href="assinatura-mensal.html"><i class="fas fa-calendar-alt"></i> Assinatura Mensal</a></li>
+                <li><a href="percentage_increase.html"><i class="fas fa-arrow-up"></i> Aumento Percentual</a></li>
+                <li><a href="percentage_decrease.html"><i class="fas fa-arrow-down"></i> Redução Percentual</a></li>
+                <li><a href="percentage_of_value.html"><i class="fas fa-percent"></i> Porcentagem de um Valor</a></li>
+                <li><a href="calculadora.html"><i class="fas fa-calculator"></i> Calculadora Normal</a></li>
+                <li><a href="currency_converter.html"><i class="fas fa-exchange-alt"></i> Conversor de Moeda</a></li>
+            </ul>
+    </div>
+    <footer>
+        <div class="footer-content">
+            
+    
+                <p>© 2024, todos os direitos reservados.</p>
+                <p>Desenvolvido por: Deyvson Felipe</p>
+                <p>Contatos:
+                    <a href="mailto:deyvsonf016@gmail.com?subject=Assunto da mensagem&body=Corpo da mensagem" target="_blank"><i class="fas fa-envelope"></i> E-mail</a>
+                    |
+                    <a href="https://www.facebook.com/Deyvsonflima" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    |
+                    <a href="https://www.instagram.com/deyvsonf.lima/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </p>
+                    
+    </div>
+    </footer>
+
+    <script>
+        document.getElementById('search').addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let links = document.querySelectorAll('nav ul li');
+            links.forEach(link => {
+                let text = link.textContent || link.innerText;
+                if (text.toLowerCase().includes(filter)) {
+                    link.style.display = '';
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+</html>
