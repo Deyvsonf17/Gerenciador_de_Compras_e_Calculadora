@@ -61,24 +61,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 purchaseList.appendChild(row);
 
-                installmentsSelect.addEventListener('change', async function(event) {
+                installmentsSelect.addEventListener('change', function(event) {
                     event.preventDefault(); // Evita a atualização da página
 
                     const selectedInstallment = installmentsSelect.value;
                     if (selectedInstallment) {
                         const status = purchase.status_pagamento[`parcela_${selectedInstallment}`];
                         let statusText;
-                        if (status) {
-                            statusText = `Pago em ${status.data_pagamento}`; // Supondo que a data de pagamento seja fornecida dentro do objeto 'status'
+                        if (status && status.pago) {
+                            const formattedDate = formatDate(status.data_pagamento);
+                            statusText = `Pago em: ${formattedDate}`;
                         } else {
                             statusText = 'Falta Pagar';
                         }
-                    
-                    
+
                         statusContainer.innerHTML = `
                             <div class="checkbox-wrapper">
-                                <input type="checkbox" data-installment="${selectedInstallment}" ${status ? 'checked' : ''}>
-                                <span class="${status ? 'paid' : 'not-paid'}">${statusText}</span>
+                                <input type="checkbox" data-installment="${selectedInstallment}" ${status && status.pago ? 'checked' : ''}>
+                                <span class="${status && status.pago ? 'paid' : 'not-paid'}">${statusText}</span>
                             </div>
                         `;
 
@@ -101,6 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
                                         paid
                                     })
                                 });
+
+                                // Atualizar o status do pagamento no frontend sem recarregar a página
+                                const updatedStatus = paid ? `Pago em: ${formatDate(new Date())}` : 'Falta Pagar';
+                                statusContainer.querySelector('span').textContent = updatedStatus;
+                                statusContainer.querySelector('span').className = paid ? 'paid' : 'not-paid';
+
                             } catch (err) {
                                 console.error('Erro ao atualizar status de pagamento', err);
                             }
@@ -118,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPurchases();
 
     document.getElementById('purchase-form').addEventListener('submit', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Evita a atualização da página ao enviar o formulário
 
         const name = document.getElementById('name').value;
         const product = document.getElementById('product').value;
@@ -163,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 function formatDate(dateString) {
     const date = new Date(dateString);
     const day = date.getDate().toString().padStart(2, '0');
@@ -171,3 +176,4 @@ function formatDate(dateString) {
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
 }
+

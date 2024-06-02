@@ -91,11 +91,19 @@ app.get('/compras-parceladas', async (req, res) => {
 app.patch('/compras-parceladas/:name/:product', async (req, res) => {
     const { name, product } = req.params;
     const { installment, paid } = req.body;
+    const dataPagamento = paid ? new Date() : null; // Use a data atual ou null
+
     try {
         const client = await pool.connect();
         const result = await client.query('SELECT status_pagamento FROM compras_parceladas WHERE nome = $1 AND produto = $2', [name, product]);
         const statusPagamento = result.rows[0].status_pagamento;
-        statusPagamento[`parcela_${installment}`] = paid;
+
+        if (paid) {
+            statusPagamento[`parcela_${installment}`] = { pago: true, data_pagamento: dataPagamento };
+        } else {
+            statusPagamento[`parcela_${installment}`] = { pago: false, data_pagamento: null };
+        }
+
         await client.query('UPDATE compras_parceladas SET status_pagamento = $1 WHERE nome = $2 AND produto = $3', [statusPagamento, name, product]);
         res.send('Status de pagamento atualizado com sucesso!');
         client.release();
