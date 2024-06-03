@@ -253,13 +253,3 @@ valueInput.addEventListener("input", function() {
   this.value = valor ? 'R$ ' + valor : '';
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'foroter.html', true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            document.getElementById('footer-container').innerHTML = xhr.responseText;
-        }
-    };
-    xhr.send();
-});

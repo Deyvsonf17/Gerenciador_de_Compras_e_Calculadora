@@ -176,4 +176,13 @@ function formatDate(dateString) {
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
 }
+const valueInput = document.getElementById("value");
 
+valueInput.addEventListener("input", function() {
+  let valor = this.value.replace(/\D/g, '');
+  valor = (valor / 100).toFixed(2);
+  this.value = valor ? 'R$ ' + valor : '';
+});
+
+
+  

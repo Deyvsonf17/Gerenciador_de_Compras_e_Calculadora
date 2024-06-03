@@ -1,193 +1,74 @@
-/* Estilos gerais */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f0f8ff;
-    color: #000080;
-}
-
-h1 {
-    text-align: center;
-    color: #0000ff;
-    margin-bottom: 20px;
-}
-
-form {
-    max-width: 325px;
-    margin: 0 auto 20px;
-   
-    background-color: #e6f0ff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.1);
-}
-
-form label {
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #000080;
-}
-
-form input, form button {
-    width: calc(100% - 24px);
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form input:focus, form button:focus {
-    outline: none;
-    border-color: #0000ff;
-    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
-}
-
-form button {
-    background-color: #0000ff;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #000080;
-}
-
-/* Tabela */
-.table-responsive {
+/* Estilo para o conteúdo */
+.container {
     margin-top: 20px;
-    margin-bottom: 250px;
-    overflow-x: auto;
+    margin-bottom: 80px; /* Adiciona espaço extra para o rodapé fixo */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 8px;
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ced4da;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.table {
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-th, td {
-    padding: 15px;
+/* Estilo para o rodapé */
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    position: relative;
+    bottom: 82;
+    width: 100%;
     text-align: center;
-    border: 2px solid black;
 }
 
-th {
-    background-color: #0000ff;
-    color: #fff;
-}
-
-/* Estilos adicionais */
-.status {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.status .checkbox-wrapper {
-    display: flex;
-    align-items: center;
-}
-
-.status .checkbox-wrapper input[type="checkbox"] {
-    margin-left: 10px;
-}
-
-.status .checkbox-wrapper span {
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.actions {
-    display: flex;
-    flex-direction: column;
-}
-
-.actions button {
-    background-color: #f0f8ff;
-    border: 1px solid #ddd;
-    color: #000080;
-    padding: 8px 16px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.actions button:hover {
-    background-color: #0000ff;
-    color: #fff;
-}
-
-.actions .delete-button {
-    background-color: #ff6666;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.actions .delete-button:hover {
-    background-color: #cc0000;
-}
-
-.actions .edit-button {
-    background-color: #ffeb3b;
+footer p {
+    margin-bottom: 0;
     color: #333;
 }
 
-.actions .edit-button:hover {
-    background-color: #fdd835;
-}
-
-/* Navbar */
-.navbar {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-.nav-links a {
-    color: #000080;
+/* Estilo para o menu de navegação */
+.navbar-brand {
     font-weight: bold;
 }
 
-.nav-links a:hover {
-    background-color: rgba(173, 216, 230, 0.7);
-    border-radius: 10px;
+.navbar-toggler {
+    border: none;
 }
 
-/* Footer */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 1% 55px;
-    box-sizing: border-box;
+.navbar-nav .nav-item .dropdown-menu {
+    border-radius: 0 0 5px 5px;
 }
 
-/* Estilos específicos para dispositivos móveis */
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsividade para o menu */
 @media (max-width: 768px) {
-    footer {
-        flex-direction: column;
-        padding: 10px;
+    .navbar-nav .nav-item .dropdown-menu {
+        position: static;
+        display: none;
     }
 
-    footer p {
-        margin: 5px 0;
-    }
-
-    form button {
-        width: 100%;
-    }
-
-    .table-responsive {
-        margin-bottom: 1px; /* Espaço adicional para evitar sobreposição do rodapé */
+    .navbar-nav .nav-item .dropdown-menu.show {
+        display: block;
     }
 }

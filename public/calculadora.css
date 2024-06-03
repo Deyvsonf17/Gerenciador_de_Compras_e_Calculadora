@@ -1,254 +1,115 @@
-/* Estilo geral */
-body {
-    font-family: 'Roboto', sans-serif;
-    background: #f0f8ff; /* Fundo branco */
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #000080; /* Azul escuro */
-}
-
+/* Estilo para o conteúdo */
 .container {
-    background: rgba(0, 0, 255, 0.1); /* Fundo azul claro transparente */
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 139, 0.5); /* Sombra azul escuro */
-    text-align: center;
-    width: 90%;
-    max-width: 350px;
-    margin: 80px 20px;
+    margin-top: 20px;
+    margin-bottom: 60px; /* Adiciona espaço extra para o rodapé fixo */
 }
 
-h2 {
-    color: #000080; /* Azul escuro */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-title {
     margin-bottom: 20px;
+    color: #333;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.form-control {
+    border-radius: 5px;
 }
 
-nav ul li {
-    margin: 15px 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #000080; /* Azul escuro */
-    background: rgba(255, 255, 255, 0.2); /* Fundo azul claro transparente */
-    padding: 10px 20px;
-    border-radius: 20px;
-    transition: background 0.3s, transform 0.3s;
-    display: inline-block;
-}
-
-nav ul li a:hover {
-    background: rgba(173, 216, 230, 0.7); /* Azul claro */
-    transform: scale(1.05);
-}
-
-input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 200, 0.5); /* Fundo azul claro transparente */
-    color: #000000;
-    font-size: 16px;
-    text-align: center;
-    outline: none;
-    transition: background 0.3s, transform 0.3s;
-}
-
-input[type="text"]:focus {
-    background: rgba(255, 255, 255, 1); /* Azul mais intenso */
-    transform: scale(1.05);
-}
-
-button {
-    padding: 10px;
-    background: #0000ff; /* Azul */
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 5px 0;
-    transition: background 0.3s, transform 0.3s;
-    font-size: 14px;
-}
-
-button:hover {
-    background: #000080; /* Azul escuro */
-    transform: scale(1.05);
-}
-
-p {
-    font-weight: bold;
+.result {
     margin-top: 20px;
 }
 
-/* Estilo do menu */
-.navbar {
-    background-color: #4d6bf2; /* Fundo branco */
-    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.25);
-    width: 100%;
+/* Estilo para o rodapé */
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
     position: fixed;
-    top: 0;
-    z-index: 9999;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
-.nav-links {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+footer p {
+    margin-bottom: 0;
+    color: #333;
 }
 
-.nav-links li {
-    position: relative;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: #000080; /* Azul escuro */
-    background-color: #fff;
-    padding: 10px 15px;
-    display: block;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin: 5px;
-}
-
-.nav-links li a:hover {
-    background-color: rgba(173, 216, 230, 0.2); /* Fundo azul claro transparente */
-    border-radius: 10px;
-}
-
-.sub-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 200px;
-    background-color: #f0f8ff; /* Fundo branco */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.nav-links li:hover .sub-menu {
-    opacity: 1;
-    visibility: visible;
-    top: 60px;
-}
-
-.sub-menu li {
-    position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.sub-menu li a {
-    padding: 12px 20px;
-}
-
-.sub-menu li:last-child {
-    border-bottom: none;
-}
-
-/* Estilo do conteúdo */
+/* Estilo para a calculadora */
 .calculator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.calculator input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: right;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
 }
 
 .calculator-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px; /* Espaçamento entre os botões */
-    margin-top: 10px; /* Espaço entre o display e os botões */
 }
 
 .calculator-buttons button {
     padding: 10px;
-    font-size: 12px;
-    display: inline-block;
-    width: 50px;
-    height: 40px; /* Altura fixa para os botões */
-}
-
-#calc-display {
-    width: calc(100% - 20px);
-    padding: 10px;
     font-size: 18px;
-    margin-bottom: 20px;
-    background: #f0f8ff;
-    color: #000080;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid #000080;
-}
-
-footer {
-    background-color: #4d6bf2; /* Fundo branco */
-    color: #ffffff; /* Azul escuro */
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+    display: inline-block;
     width: 100%;
-    box-sizing: border-box;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-footer p {
-    margin: 5px; /* Margem para os parágrafos */
+.calculator-buttons button:hover {
+    background-color: #dee2e6;
+}
+
+/* Estilo para o menu de navegação */
+.navbar-brand {
     font-weight: bold;
 }
 
-footer a {
-    color: #ffffff; /* Azul escuro */
-    text-decoration: none;
-    margin: 0 10px; /* Margem entre os links */
+.navbar-toggler {
+    border: none;
 }
 
-footer a:hover {
-    color: #e7a7a7; /* Azul escuro */
-    text-decoration: underline;
+.navbar-nav .nav-item .dropdown-menu {
+    border-radius: 0 0 5px 5px;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-    .container {
-        width: 90%;
-        padding: 20px 10px;
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsividade para o menu */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item .dropdown-menu {
+        position: static;
+        display: none;
     }
 
-    .calculator-buttons button {
-        width: 40px;
-        height: 35px;
-    }
-
-    #calc-display {
-        height: 35px;
-        font-size: 16px;
-    }
-
-    button {
-        padding: 8px;
-        font-size: 12px;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    .nav-links li a {
-        padding: 10px 15px;
+    .navbar-nav .nav-item .dropdown-menu.show {
+        display: block;
     }
 }
